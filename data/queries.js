@@ -6,5 +6,5 @@ async function retrieveAllMessages() {
 }
 
 module.exports = {
-    retrieveAllMessasges
+    retrieveAllMessages
 }
