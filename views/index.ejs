@@ -8,14 +8,13 @@
       <div class="card">
         <h3><%= message.user %></h3>
         <p><%= message.text %></p>
-        <p>Date Added: <%= message.added %></p>
+        <p>Date Added: <%= new Date(message.date).toLocaleDateString() %></p>
         <a href="/message/<%= index %>" target="_blank" rel="noopener noreferrer" class="open">
           open
         </a>
       </div>
       <% }) %>
     </div>
-
     <a href="/new" class="new-message">Add message</a>
   </body>
 </html>
