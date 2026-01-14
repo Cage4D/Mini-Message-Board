@@ -5,6 +5,16 @@ async function retrieveAllMessages() {
     return rows;
 }
 
+async function writeMessage({ text, author }) {
+    const SQL = `
+    INSERT INTO messages (text, author, date)
+    VALUES 
+    ($1, $2, NOW());
+    `
+    await pool.query(SQL, [text, author])
+}
+
 module.exports = {
-    retrieveAllMessages
+    retrieveAllMessages,
+    writeMessage
 }
