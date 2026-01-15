@@ -1,16 +1,8 @@
 const { Router } = require("express")
 const newRouter = Router()
-const messages = require("../data/queries")
+const newRouteController = require("../controllers/newRouteController")
 
-
-newRouter.get("/", (req, res) => {
-    res.render("form", {})
-})
-
-newRouter.post("/", async (req, res) => {
-    const { messageText, authorName } = req.body
-   await messages.writeMessage({ text: messageText, author: authorName })
-    res.redirect("/")
-})
+newRouter.get("/", newRouteController.newRouteGet)
+newRouter.post("/", newRouteController.newRoutePost)
 
 module.exports = newRouter;
