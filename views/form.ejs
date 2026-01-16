@@ -1,8 +1,15 @@
 <form method="POST" action="/new">
-    <h2></h2>
-    <label for="form-name">Name:</label>
-    <input type="text" id="form-name" name="authorName">
-    <label for="form-message">Message:</label>
-    <input type="text" id="form-message" name="messageText">
-    <button type="submit">Submit</button>
+  <h2></h2>
+  <label for="form-name">Name:</label>
+  <input type="text" id="form-name" name="authorName" />
+  <label for="form-message">Message:</label>
+  <input type="text" id="form-message" name="messageText" />
+  <button type="submit">Submit</button>
+  <% if (errors && errors.length > 0) { %>
+  <ul>
+    <% errors.forEach(error => { %>
+    <li><%= error.msg %></li>
+    <% }) %>
+  </ul>
+  <% } %>
 </form>
